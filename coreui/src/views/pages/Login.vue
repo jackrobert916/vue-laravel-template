@@ -91,7 +91,8 @@ import axios from "axios";
           .catch(function (error) {
             self.message = 'Incorrect E-mail or password';
             self.showMessage = true;
-            console.log(error);
+           
+
           });
   
         }

@@ -38,7 +38,7 @@
                   autocomplete="new-password"
                   class="mb-4"
                   v-model="password_confirmation"
-                >
+                >                
                   <template #prepend-content><CIcon name="cil-lock-locked"/></template>
                 </CInput>
                 <CButton type="submit" color="success" block>Create Account</CButton>
@@ -91,11 +91,13 @@
             self.password_confirmation = '';
             console.log(response);
             self.$router.push({ path: '/login' });
+
           })
-          .catch(function (error) {
-            console.log(error);
+          .catch(function (error) { 
+            var vue =  error.response.data;          
+                console.log(vue.errors); // => the response payload 
+
           });
-  
         }
       }
     }
